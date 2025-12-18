@@ -10,6 +10,12 @@ from src.services.user_service import UserService
 router = APIRouter(prefix="/user", tags=["User"])
 
 
+@router.get("/hello")
+async def hello_user() -> dict:
+    """Hello User format."""
+    return {"message": "Hello User"}
+
+
 @router.post(
     "/dummy-users",
     response_model=list[User],

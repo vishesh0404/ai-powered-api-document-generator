@@ -7,7 +7,7 @@ from fastapi.responses import HTMLResponse
 router = APIRouter()
 
 
-@router.get("/api/ref", include_in_schema=False)
+@router.get("/api/ref", include_in_schema=True)
 def custom_openapi_ui() -> HTMLResponse:
     """Serve the custom OpenAPI UI."""
     return get_swagger_ui_html(openapi_url="/openapi.json", title="API Docs")
