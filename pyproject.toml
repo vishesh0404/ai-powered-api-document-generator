@@ -1,0 +1,31 @@
+[project]
+name = "ai-powered-api-document-genrator"
+version = "0.1.0"
+description = "This Project is AI Powered API document Generator"
+readme = "README.md"
+authors = [
+  { name = "Vishesh Sharma", email = "vishesh0404@gmail.com" },
+]
+requires-python = ">=3.14"
+dependencies = [
+  "duckdb-engine>=0.17.0,<1.0",
+  "fastapi[standard]>=0.120.2,<1.0",
+  "loguru>=0.7.3,<1.0",
+  "pydantic-settings>=2.11.0,<3.0",
+  "sqlalchemy>=2.0.44,<3.0",
+  "sqlmodel>=0.0.27,<1.0",
+]
+
+[dependency-groups]
+dev = [
+  "basedpyright>=1.29.1",
+  "dprint-py>=0.50.2.0",
+  "ruff>=0.11.8",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
