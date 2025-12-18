@@ -1,0 +1,70 @@
+# Python Artifacts & Caches
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.py[cod]
+*.py[oc]
+.cache
+
+# Binary / Compiled Extensions
+*.so
+*.dll
+*.dylib
+
+# Virtual Environments
+.Python
+.venv/
+env/
+venv/
+.python-version
+
+# Distribution & Packaging
+bin/
+build/
+develop-eggs/
+dist/
+wheels/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+include/
+man/
+*.egg-info/
+.installed.cfg
+*.egg
+typings/
+
+# Logs & Temporary Files
+pip-log.txt
+pip-delete-this-directory.txt
+pip-selfcheck.json
+*.log
+*.pot
+.DS_Store
+*.pem
+
+# Testing & Coverage
+htmlcov/
+.tox/
+.coverage
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+
+# Project Configuration
+.mr.developer.cfg
+.project
+.pydevproject
+
+
+# IDE / Editor Settings
+.ropeproject
+.idea/
+.zed/
+.fleet/
+.vscode/
