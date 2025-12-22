@@ -146,8 +146,8 @@ class Server:
             yield
 
         app: FastAPI = FastAPI(
-            docs_url=None,
-            redoc_url=None,
+            # docs_url=None,
+            # redoc_url=None,
             title="ai-powered-api-document-generator",
             lifespan=lifespan,
         )

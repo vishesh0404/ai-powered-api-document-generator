@@ -7,7 +7,9 @@ from pathlib import Path
 from types import FrameType
 from typing import override
 
+from fastapi import HTTPException
 from loguru import logger
+from sqlalchemy.sql.expression import true
 
 HOME_DIR = Path.home()
 DB_DIR = HOME_DIR / ".db"
@@ -16,6 +18,7 @@ SCHEMA_NAME = "api_schema"
 
 # Support both ${VAR:-default} and ${VAR??default} syntaxes
 ENV_PATTERN = r"\${([^{}:??]+)(?::-([^}]+))?(?:\?\?([^}]+))?}"
+ALLOWED_FILE_EXTENSIONS = {".py"}
 
 
 def _replace_env_vars(match: re.Match[str]) -> str:
@@ -75,3 +78,12 @@ class LoggerHandler(logging.Handler):
         logger.opt(depth=depth, exception=record.exc_info).log(
             level, record.getMessage()
         )
+
+
+# def validate_file_type(filename: str) -> :
+#     """Validate uploaded file extentions."""
+#     ext = Path(filename).suffix.lower()
+#     if ext in ALLOWED_FILE_EXTENSIONS:
+#         return 1
+#     else:
+#         return 0
